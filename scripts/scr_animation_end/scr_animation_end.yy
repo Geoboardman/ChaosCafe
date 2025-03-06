@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"PetScripts",
+  "%Name":"scr_animation_end",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"PetScripts",
+  "name":"scr_animation_end",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

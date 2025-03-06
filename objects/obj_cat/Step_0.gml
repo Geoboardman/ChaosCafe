@@ -31,11 +31,6 @@ switch (state) {
     case CatState.SLEEP: move_direction = 0; break;
 }
 
-// Apply Gravity
-y_velocity += gravity;
-y += y_velocity;
-if (place_meeting(x, y + 1, obj_ground)) y_velocity = 0;
-
 // **Assign the sprite from the struct**
 switch (state) {
     case CatState.IDLE: sprite_index = sprite_set.idle; break;
@@ -44,3 +39,5 @@ switch (state) {
     case CatState.JUMP: sprite_index = sprite_set.jump; break;
     case CatState.SLEEP: sprite_index = sprite_set.sleep; break;
 }
+
+scr_collision_system();

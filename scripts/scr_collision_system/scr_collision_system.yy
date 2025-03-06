@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"PetScripts",
+  "%Name":"scr_collision_system",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"PetScripts",
+  "name":"scr_collision_system",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",
