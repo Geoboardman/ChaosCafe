@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://chtbg5qwiupg0"
+path="res://.godot/imported/3de74916-5c77-4e15-93a7-fbc420a4357c.png-bbc0b6ce0bc9ac6128c4c55c712f6726.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://GameMakerStudio2/space colors beta/sprites/s_button/layers/4209e781-83b1-4eee-9581-3c4492bb6ad4/3de74916-5c77-4e15-93a7-fbc420a4357c.png"
+dest_files=["res://.godot/imported/3de74916-5c77-4e15-93a7-fbc420a4357c.png-bbc0b6ce0bc9ac6128c4c55c712f6726.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

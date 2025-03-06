@@ -4,7 +4,8 @@ enum CatState {
     SIT,    
     RUN,     
     JUMP,    
-    SLEEP    
+    SLEEP,    
+    SLEEP_ON_BED,    
 }
 
 state = CatState.IDLE; // Start in IDLE

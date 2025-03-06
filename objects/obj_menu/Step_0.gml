@@ -2,6 +2,8 @@
 var mx = mouse_x;
 var my = mouse_y;
 
+menu_x = global.camera_x_position;
+
 // Mouse Pressed: Check if clicked on a menu item
 if (mouse_check_button_pressed(mb_left) && my >= menu_y) {
     for (var i = 0; i < array_length(menu_items); i++) {

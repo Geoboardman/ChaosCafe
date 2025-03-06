@@ -34,6 +34,9 @@
     "name":"spr_IdleCatb",
     "path":"sprites/spr_IdleCatb/spr_IdleCatb.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_Idle2Catb",
+    "path":"sprites/spr_Idle2Catb/spr_Idle2Catb.yy",
+  },
   "visible":true,
 }
