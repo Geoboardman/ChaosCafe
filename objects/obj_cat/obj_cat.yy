@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"IdleCatb",
-    "path":"sprites/IdleCatb/IdleCatb.yy",
+    "name":"spr_IdleCatb",
+    "path":"sprites/spr_IdleCatb/spr_IdleCatb.yy",
   },
   "spriteMaskId":null,
   "visible":true,
