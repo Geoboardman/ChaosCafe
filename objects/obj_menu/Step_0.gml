@@ -1,0 +1,36 @@
+/// Step Event (obj_Menu)
+var mx = mouse_x;
+var my = mouse_y;
+
+// Mouse Pressed: Check if clicked on a menu item
+if (mouse_check_button_pressed(mb_left) && my >= menu_y) {
+    for (var i = 0; i < array_length(menu_items); i++) {
+        var x_pos = menu_x + (i * item_spacing) + 40;
+        var y_pos = menu_y + menu_height / 2;
+
+        if (point_distance(mx, my, x_pos, y_pos) < 20) {
+            selected_item = i;
+            dragging = true;
+
+            // Create a temporary draggable object
+            drag_obj = instance_create_layer(mx, my, "Instances", obj_dragging);
+            drag_obj.sprite_index = menu_sprites[selected_item];
+            drag_obj.selected_index = selected_item; // Store which object it is
+            break;
+        }
+    }
+}
+
+// Mouse Released: Drop the object
+if (mouse_check_button_released(mb_left) && dragging) {
+    dragging = false;
+    if (drag_obj != noone and instance_exists(drag_obj)) {
+        if (drag_obj.y < menu_y) {
+            // Convert it into a placed furniture object
+            var placed_obj = instance_create_layer(drag_obj.x, drag_obj.y, "Instances", obj_furniture);
+            placed_obj.sprite_index = menu_sprites[drag_obj.selected_index];
+        }
+        instance_destroy(drag_obj);
+    }
+    selected_item = -1;
+}
