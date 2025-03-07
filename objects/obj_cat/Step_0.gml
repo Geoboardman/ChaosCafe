@@ -2,6 +2,7 @@
 scr_inputs_simple();
 
 onground = place_meeting(x,y+1,obj_wall);
+onwall = place_meeting(x+image_xscale,y,obj_wall);
 
 // Reduce timer
 state_timer--;
@@ -14,7 +15,7 @@ if scr_mouse_enter() {
 }
 
 //flip sprite based on hsp
-if hsp != 0 { image_xscale = sign(hsp); }
+if hsp != 0 and not onwall { image_xscale = sign(hsp); }
 
 //randomize state
 if state != CatState.PICKED_UP and state != CatState.SLEEP_ON_BED {
@@ -60,9 +61,8 @@ switch (state) {
 		sprite_index = sprite_set.jump;
 		image_index = vsp < 0? 0 : 1;
 		if (hsp == 0) hsp = choose(-1,1);
-		if onground {
-			vsp = jump_force;
-		}
+		if onground and vsp == 0 { vsp = jump_force; } 
+		if place_meeting(x,y+2,obj_wall) and vsp > 0 { state = choose(CatState.IDLE,CatState.RUN); }
         break;
     case CatState.SLEEP:
 		sprite_index = sprite_set.sleep;

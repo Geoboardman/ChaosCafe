@@ -6,8 +6,9 @@ vsp = 0;
 grav = MACRO_GRAV;
 speed_walk = 1;
 speed_run = 2;
-jump_force = -6;
+jump_force = -5;
 onground = 0;
+onwall = 0;
 
 state_timer = irandom_range(60, 180); // Time before switching states (1-3 sec)
 

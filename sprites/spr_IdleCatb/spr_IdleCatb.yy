@@ -1,10 +1,10 @@
 {
   "$GMSprite":"",
   "%Name":"spr_IdleCatb",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":29,
-  "bbox_left":0,
-  "bbox_right":27,
+  "bbox_left":2,
+  "bbox_right":29,
   "bbox_top":8,
   "collisionKind":1,
   "collisionTolerance":0,
