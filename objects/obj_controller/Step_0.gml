@@ -4,6 +4,7 @@ if r_key_pressed {
 	game_restart();
 }
 
+
 if room != r_menu { global.game_state = "play"; }
 
 switch (global.game_state) {
@@ -29,7 +30,7 @@ switch (global.game_state) {
 	
 		//CAMERA SYSTEM
 		global.camera_y_position = clamp(global.camera_y_position,0,room_height); 
-		global.camera_x_position = clamp(global.camera_x_position,0,room_width-CAMERA_WiDTH);
+		global.camera_x_position = clamp(global.camera_x_position,0,room_width-CAMERA_WIDTH);
 		camera_set_view_pos(view_camera[0], global.camera_x_position, global.camera_y_position);
 		//ARROW BUTTONS
 		
