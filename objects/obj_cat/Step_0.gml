@@ -31,6 +31,10 @@ if state != CatState.PICKED_UP and state != CatState.SLEEP_ON_BED {
 		)
 	    state_timer = irandom_range(60, 180);
 	}
+	grav = MACRO_GRAV;
+} else {
+	grav = 0;
+	vsp = 0;
 }
 
 // Handle Movement
@@ -47,7 +51,7 @@ switch (state) {
 		sprite_index = sprite_set.run; 
 		var _furniture = instance_place(x,y,obj_furniture);
 		if _furniture != noone {
-			if _furniture.sprite_index == spr_catbedblue {
+			if _furniture.sprite_index == spr_catbedblue and not place_meeting(x,y,obj_cat) {
 				state = CatState.SLEEP_ON_BED;
 				x = _furniture.x;
 				y = _furniture.y-sprite_height/2;
@@ -77,10 +81,8 @@ switch (state) {
 		hsp = 0; 
 		x = mouse_x;
 		y = mouse_y;
-		grav = 0;
 		if not left_click_held {
 			state = CatState.JUMP;
-			grav = MACRO_GRAV;
 		}
 		break;
 }

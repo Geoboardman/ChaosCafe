@@ -31,9 +31,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_girl",
-    "path":"sprites/spr_girl/spr_girl.yy",
+    "name":"spr_girl_idle",
+    "path":"sprites/spr_girl_idle/spr_girl_idle.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_girl_idle",
+    "path":"sprites/spr_girl_idle/spr_girl_idle.yy",
+  },
   "visible":true,
 }

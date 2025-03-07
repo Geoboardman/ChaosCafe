@@ -1,4 +1,4 @@
-//room_goto_next();
+room_goto_next();
 
 //GLOBAL VARIABLES
 	global.game_state = "menu";
