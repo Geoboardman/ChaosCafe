@@ -1,5 +1,4 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+//Jampley's script
 function scr_inputs_simple(){
 	
 	//var stickh = gamepad_axis_value(0,gp_axislh);

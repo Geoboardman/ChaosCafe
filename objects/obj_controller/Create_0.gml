@@ -1,4 +1,4 @@
-room_goto_next();
+//room_goto_next();
 
 //GLOBAL VARIABLES
 	global.game_state = "menu";
@@ -7,6 +7,8 @@ room_goto_next();
 	global.camera_y_position = 0;
 	
 	global.volume_mode = false;  // this variable current does nothing
+	
+	global.money = 50;
 
 //MACROS
 	#macro GUI_WIDTH 448

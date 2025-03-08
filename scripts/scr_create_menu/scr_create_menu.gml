@@ -1,3 +1,4 @@
+//Jampley's script
 function scr_create_menu(_column_legnth,_x,_y,_separetion_x,_separetion_y,_sprite,_option_names,_func_list) {
 	var _button_list = [0]; //set array for the instances of the button object
 	var _length = array_length(_option_names);//length of the array for the text assign to every instance

@@ -15,7 +15,7 @@ if scr_mouse_enter() {
 }
 
 //flip sprite based on hsp
-if hsp != 0 and not onwall { image_xscale = sign(hsp); }
+if hsp != 0 { image_xscale = sign(hsp); }
 
 //randomize state
 if state != CatState.PICKED_UP and state != CatState.SLEEP_ON_BED {
@@ -75,6 +75,9 @@ switch (state) {
     case CatState.SLEEP_ON_BED:
 		sprite_index = sprite_set.sleep;
 		hsp = 0; 
+		if not place_meeting(x,y,obj_furniture){
+			state = CatState.JUMP;
+		}
 		break;
     case CatState.PICKED_UP:
 		sprite_index = sprite_set.idle;
