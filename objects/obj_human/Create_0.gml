@@ -20,7 +20,7 @@ boy_sprites = {
 girl_sprites = {
 	indle : spr_girl_idle,
 	walk_forward : spr_girl_walk_forward,
-	walk_sideways : spr_boy_walk_sideways,
+	walk_sideways : spr_girl_walk_sideways,
 }
 
 currect_sprites = choose( 

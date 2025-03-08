@@ -87,6 +87,7 @@
     {"id":{"name":"spr_expressions","path":"sprites/spr_expressions/spr_expressions.yy",},},
     {"id":{"name":"spr_girl_idle","path":"sprites/spr_girl_idle/spr_girl_idle.yy",},},
     {"id":{"name":"spr_girl_walk_forward","path":"sprites/spr_girl_walk_forward/spr_girl_walk_forward.yy",},},
+    {"id":{"name":"spr_girl_walk_sideways","path":"sprites/spr_girl_walk_sideways/spr_girl_walk_sideways.yy",},},
     {"id":{"name":"spr_heart","path":"sprites/spr_heart/spr_heart.yy",},},
     {"id":{"name":"spr_HurtCatb","path":"sprites/spr_HurtCatb/spr_HurtCatb.yy",},},
     {"id":{"name":"spr_HurtCatttt","path":"sprites/spr_HurtCatttt/spr_HurtCatttt.yy",},},
