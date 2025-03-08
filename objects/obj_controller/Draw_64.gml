@@ -1,5 +1,6 @@
-//draw_text(GUI_WIDTH/3,8,$"GAME STATE: {global.game_state}");
-
+if DEBUG_MODE == true {
+	draw_text(GUI_WIDTH/3,8,global.new_person_timer);
+}
 
 switch (global.game_state) {
 	case "menu":

@@ -1,10 +1,10 @@
 {
   "$GMSprite":"",
-  "%Name":"Backyard",
+  "%Name":"spr_heart",
   "bboxMode":0,
-  "bbox_bottom":179,
+  "bbox_bottom":7,
   "bbox_left":0,
-  "bbox_right":787,
+  "bbox_right":7,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,16 +12,16 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"645e7bcc-2884-46d2-b86e-b2643ccb270d","name":"645e7bcc-2884-46d2-b86e-b2643ccb270d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"e902fc86-9286-4e39-9d1e-314ebcd1d9ff","name":"e902fc86-9286-4e39-9d1e-314ebcd1d9ff","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
-  "height":180,
+  "height":8,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"259c4db0-5fca-411e-92f3-ffa79c249565","blendMode":0,"displayName":"default","isLocked":false,"name":"259c4db0-5fca-411e-92f3-ffa79c249565","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"59b351c7-43c3-4a9a-8aac-e435c0e99580","blendMode":0,"displayName":"default","isLocked":false,"name":"59b351c7-43c3-4a9a-8aac-e435c0e99580","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"Backyard",
+  "name":"spr_heart",
   "nineSlice":null,
   "origin":4,
   "parent":{
@@ -33,7 +33,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"",
-    "%Name":"Backyard",
+    "%Name":"spr_heart",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -57,7 +57,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"Backyard",
+    "name":"spr_heart",
     "playback":1,
     "playbackSpeed":12.0,
     "playbackSpeedType":0,
@@ -69,14 +69,14 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"645e7bcc-2884-46d2-b86e-b2643ccb270d","path":"sprites/Backyard/Backyard.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"991ed72f-1022-4e72-95fd-ba7e49576d21","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"e902fc86-9286-4e39-9d1e-314ebcd1d9ff","path":"sprites/spr_heart/spr_heart.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"80607bf6-7093-47a9-9705-d1aa5f5a559c","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":394,
-    "yorigin":90,
+    "xorigin":4,
+    "yorigin":4,
   },
   "swatchColours":null,
   "swfPrecision":0.5,
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":788,
+  "width":8,
 }

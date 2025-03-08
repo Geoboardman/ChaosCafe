@@ -1,11 +1,13 @@
 hsp = 0;
 vsp = 0;
-grav = MACRO_GRAV;
+grav = 0;
 
-state = "idle";
+state = "walk_forward";
 
 og_walk_timer = 60;
 walk_timer = og_walk_timer;
+
+pet = noone;
 
 sprite_index = choose(spr_girl_idle,spr_boy_idle);
 

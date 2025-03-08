@@ -10,12 +10,13 @@ if (mouse_check_button_pressed(mb_left) && my >= menu_y) {
         var x_pos = menu_x + (i * item_spacing) + 40;
         var y_pos = menu_y + menu_height / 2;
 
-        if (point_distance(mx, my, x_pos, y_pos) < 20) {
+        if (point_distance(mx, my, x_pos, y_pos) < 20) and global.money >= price_list[i] {
             selected_item = i;
             dragging = true;
 
             // Create a temporary draggable object
             drag_obj = instance_create_layer(mx, my, "Instances", obj_dragging);
+            drag_obj.price = price_list[i];
             drag_obj.sprite_index = menu_sprites[selected_item];
             drag_obj.selected_index = selected_item; // Store which object it is
             break;

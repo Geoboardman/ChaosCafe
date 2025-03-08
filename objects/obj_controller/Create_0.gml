@@ -1,4 +1,12 @@
-//room_goto_next();
+#macro DEBUG_MODE true
+skip_room = r_house;
+
+if DEBUG_MODE == true {
+	if skip_room != undefined {
+		room_goto(skip_room);
+	}
+}
+
 
 //GLOBAL VARIABLES
 	global.game_state = "menu";
@@ -9,7 +17,12 @@
 	global.volume_mode = false;  // this variable current does nothing
 	
 	global.money = 50;
-
+	
+	og_new_person_timer = 1500;
+	global.new_person_timer = 300;
+	timer_speed = 1;
+	
+	
 //MACROS
 	#macro GUI_WIDTH 448
 	#macro GUI_HEIGHT 264
@@ -26,7 +39,13 @@
 	    SLEEP,    
 	    SLEEP_ON_BED,
 	    PICKED_UP,
+	    ADOPTED,
+	    NOTHING,
 	}
-
+//FUNCTIONS
+	function reset_timer() {
+		global.new_person_timer = og_new_person_timer;
+	}
+	
 //OTHERS
 	display_set_gui_size(GUI_WIDTH,GUI_HEIGHT);

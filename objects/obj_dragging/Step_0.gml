@@ -10,8 +10,13 @@ if (keyboard_check_pressed(vk_delete) || keyboard_check_pressed(ord("X"))) {
 // Drop the object on mouse release
 if (mouse_check_button_released(mb_left)) {
     if (y <= obj_menu.menu_y - 16) { // Ensure it's not dropped inside the menu
-        var placed_obj = instance_create_layer(x, y, "Instances", obj_furniture);
-        placed_obj.sprite_index = sprite_index;
+		if sprite_index = spr_IdleCatb  {
+			instance_create_layer(x, y, "cats", obj_cat);
+		} else {
+			var placed_obj = instance_create_layer(x, y, "Instances", obj_furniture);
+			placed_obj.sprite_index = sprite_index;
+		}
+		global.money -= price;
     }
     instance_destroy();
 }

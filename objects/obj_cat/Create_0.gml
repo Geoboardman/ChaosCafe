@@ -12,6 +12,18 @@ onwall = 0;
 
 state_timer = irandom_range(60, 180); // Time before switching states (1-3 sec)
 
+//ADOPTION
+happiness = 0;
+happiness_frame = 0;
+onwer = noone;
+
+//SLEEP
+	sleepy = false;
+	og_sleepy_timer = 300;
+	sleepy_timer = og_sleepy_timer;
+
+og_room = room;
+
 // Randomly assign a cat type (0, 1, or 2)
 cat_variant = irandom(2);
 

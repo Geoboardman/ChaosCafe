@@ -1,10 +1,10 @@
 {
   "$GMSprite":"",
   "%Name":"spr_girl_idle",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":79,
-  "bbox_left":23,
-  "bbox_right":56,
+  "bbox_left":20,
+  "bbox_right":60,
   "bbox_top":6,
   "collisionKind":1,
   "collisionTolerance":0,

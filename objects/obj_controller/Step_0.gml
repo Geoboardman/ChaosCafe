@@ -5,7 +5,9 @@ if r_key_pressed {
 }
 
 
-if room != r_menu { global.game_state = "play"; }
+if room != r_menu { 
+	global.game_state = "play";
+}
 
 switch (global.game_state) {
 	case "menu":
@@ -32,7 +34,19 @@ switch (global.game_state) {
 		global.camera_y_position = clamp(global.camera_y_position,0,room_height); 
 		global.camera_x_position = clamp(global.camera_x_position,0,room_width-CAMERA_WIDTH);
 		camera_set_view_pos(view_camera[0], global.camera_x_position, global.camera_y_position);
-		//ARROW BUTTONS
+		
+		//CUSTUMERS
+		global.new_person_timer -= 1;
+		if global.new_person_timer <= 0 {
+			if room == r_house and instance_number(obj_human) < 10 {
+				var _human = instance_create_layer(obj_exit.x,obj_exit.y,"humans",obj_human);
+				global.money += 5;
+				global.new_person_timer = og_new_person_timer;
+				if timer_speed >= 10 {
+					timer_speed += 1;
+				}
+			}
+		}
 		
 		var _arrow_one
 		break;

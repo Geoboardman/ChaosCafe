@@ -1,6 +1,8 @@
 /// Step Event (obj_Cat)
 scr_inputs_simple();
 
+happiness += 1;
+
 onground = place_meeting(x,y+1,obj_wall);
 onwall = place_meeting(x+image_xscale,y,obj_wall);
 
@@ -9,7 +11,7 @@ state_timer--;
 
 //go to pickup state 
 if scr_mouse_enter() {
-	if left_click_held {
+	if left_click_held and state != CatState.ADOPTED {
 		state = CatState.PICKED_UP;
 	}
 }
@@ -18,7 +20,7 @@ if scr_mouse_enter() {
 if hsp != 0 { image_xscale = sign(hsp); }
 
 //randomize state
-if state != CatState.PICKED_UP and state != CatState.SLEEP_ON_BED {
+if state != CatState.PICKED_UP and state != CatState.SLEEP_ON_BED and state != CatState.ADOPTED {
 	if (state_timer <= 0) {
 	    var new_state = irandom(4);
 		state = choose(
@@ -27,7 +29,6 @@ if state != CatState.PICKED_UP and state != CatState.SLEEP_ON_BED {
 			CatState.RUN,
 			CatState.JUMP,
 			CatState.JUMP,
-			CatState.SLEEP,
 		)
 	    state_timer = irandom_range(60, 180);
 	}
@@ -87,6 +88,14 @@ switch (state) {
 		if not left_click_held {
 			state = CatState.JUMP;
 		}
+		break;
+    case CatState.ADOPTED:
+		sprite_index = sprite_set.idle;
+		x = onwer.x;
+		y = onwer.y;
+		grav = 0;
+		hsp = 0;
+		vsp = 0;
 		break;
 }
 
