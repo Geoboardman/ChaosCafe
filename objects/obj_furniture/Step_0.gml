@@ -11,10 +11,9 @@ if scr_mouse_enter() { //if the cursor is over the furniture
 		global.money += price;
 	}
 } else {
-	var _stuck = instance_place(x,y,obj_wall)
-	if _stuck != noone {
-		y = _stuck.bbox_top;
-	}
+
+	y = 175
+
 }
 
 switch sprite_index {

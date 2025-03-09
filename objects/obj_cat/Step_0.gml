@@ -105,14 +105,20 @@ switch (state) {
 		if onground and vsp == 0 { vsp = choose(-5,-6); } 
 		if place_meeting(x,y+1,obj_wall) and vsp > 0 { state = "run"; }
         break;
-    case "sleep":
-		sprite_index = sprite_set.sleep;
+    case "eating":
+		sprite_index = sprite_set.sit;
 		stop_movement();
-		sleep_timer -= 1;
-		if not place_meeting(x,y,obj_furniture) or sleep_timer <= 0 {
+		poop_timer -= 1;
+		if not place_meeting(x,y,obj_furniture) or poop_timer <= 0 {
+			if poop_timer <= 0 {
+				var _furniture = instance_place(x,y,obj_furniture);
+				if _furniture != noone {
+					_furniture.image_index = 1;
+				}
+			}
+			poop_timer = og_poop_timer
 			state_timer = irandom_range(60, 180);
-			sleep_timer = og_sleep_timer
-			happiness += 25;
+			happiness += 50;
 			state = "run";
 		}
 		break;
@@ -130,6 +136,17 @@ switch (state) {
 			poop_timer = og_poop_timer
 			state_timer = irandom_range(60, 180);
 			happiness += 50;
+			state = "run";
+		}
+		break;
+	case "sleep":
+		sprite_index = sprite_set.sleep;
+		stop_movement();
+		sleep_timer -= 1;
+		if not place_meeting(x,y,obj_furniture) or sleep_timer <= 0 {
+			state_timer = irandom_range(60, 180);
+			sleep_timer = og_sleep_timer
+			happiness += 25;
 			state = "run";
 		}
 		break;

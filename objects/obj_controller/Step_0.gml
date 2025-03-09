@@ -38,7 +38,7 @@ switch (global.game_state) {
 		//CUSTUMERS
 		global.new_person_timer -= 1;
 		if global.new_person_timer <= 0 {
-			if room == r_house and instance_number(obj_human) < instance_number(obj_cat) {
+			if room == r_house and instance_number(obj_human) < 10 {
 				var _human = instance_create_layer(obj_exit.x,obj_exit.y,"humans",obj_human);
 				global.money += 5;
 				global.new_person_timer = og_new_person_timer;
