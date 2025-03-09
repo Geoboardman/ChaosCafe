@@ -37,7 +37,7 @@ switch (state) {
 		if _happy_pet != noone {
 			if _happy_pet.happiness >= 100 and _happy_pet.onwer == noone {
 				pet = _happy_pet;
-				pet.state = CatState.ADOPTED;
+				pet.state = "adopted";
 				pet.onwer = self;
 				pet.grav = 0;
 				state = "adopting";

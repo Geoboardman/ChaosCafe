@@ -16,7 +16,8 @@ if DEBUG_MODE == true {
 	
 	global.volume_mode = false;  // this variable current does nothing
 	
-	global.money = 50;
+	global.money = 180;
+	current_money_amount = global.money;
 	
 	og_new_person_timer = 1500;
 	global.new_person_timer = 300;
@@ -40,8 +41,9 @@ if DEBUG_MODE == true {
 	    SLEEP_ON_BED,
 	    PICKED_UP,
 	    ADOPTED,
-	    NOTHING,
+	    POOP,
 	}
+	
 //FUNCTIONS
 	function reset_timer() {
 		global.new_person_timer = og_new_person_timer;

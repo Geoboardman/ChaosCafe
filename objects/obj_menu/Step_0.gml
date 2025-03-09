@@ -4,6 +4,12 @@ var my = mouse_y;
 
 menu_x = global.camera_x_position;
 
+if mouse_wheel_up() and item_xoffset < item_move_right_limit {
+	item_xoffset += item_scroll_speed;
+} else if mouse_wheel_down() and item_xoffset > item_scroll_speed {
+	item_xoffset -= item_scroll_speed;
+}
+
 // Mouse Pressed: Check if clicked on a menu item
 if (mouse_check_button_pressed(mb_left) && my >= menu_y) {
     for (var i = 0; i < array_length(menu_items); i++) {

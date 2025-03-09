@@ -8,7 +8,7 @@ for (var i = 0; i < array_length(menu_items); i++) {
 	/// Step Event (obj_Menu)
 	var mx = mouse_x;
 	var my = mouse_y;
-    var x_pos = menu_x + (i * item_spacing) + 40; // Position each item
+    var x_pos = menu_x + (i * item_spacing) + 40 - item_xoffset; // Position each item
     var y_pos = menu_y + menu_height / 2;
 
     draw_sprite(menu_sprites[i], 0, x_pos, y_pos);

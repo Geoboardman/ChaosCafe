@@ -1,3 +1,4 @@
+//Jampley's script
 function scr_draw_text_and_sprites(_x,_y,_text_list,_color_list,_size=1,_s_index=0) {
 	var _list_length = array_length(_text_list);
 	for (var i = 0; i < _list_length; i+=1) {
