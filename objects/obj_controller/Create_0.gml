@@ -16,7 +16,7 @@ if DEBUG_MODE == true {
 	
 	global.volume_mode = false;  // this variable current does nothing
 	
-	global.money = 180;
+	global.money = 50;
 	current_money_amount = global.money;
 	
 	og_new_person_timer = 1500;
@@ -28,6 +28,8 @@ if DEBUG_MODE == true {
 	global.mouse_previous_x = mouse_x;
 	global.mouse_previous_y = mouse_y;
 	global.mouse_is_moving = false; 
+	
+	global.hand = false;
 	
 //MACROS
 	#macro GUI_WIDTH 448

@@ -6,6 +6,8 @@ scr_inputs_simple();
 onground = place_meeting(x,y+1,obj_wall);
 onwall = place_meeting(x+image_xscale,y,obj_wall);
 
+//if place_meeting(x,y,obj_wall) x += -image_xscale
+
 // Reduce timer
 state_timer--;
 
@@ -27,7 +29,7 @@ if scr_mouse_enter() and state != "adopted" {
 }
 
 //flip sprite based on hsp
-if hsp != 0 { image_xscale = sign(hsp); }
+if hsp != 0 and not onwall { image_xscale = sign(hsp); }
 
 
 if sleepy == false {
@@ -93,15 +95,15 @@ switch (state) {
 		}
         if (hsp == 0) hsp = choose(-2,-1,1,2);
         x += hsp * speed_walk;
-		if place_meeting(x+hsp,y,obj_wall) { state = "idle"; }
+		if place_meeting(x+hsp,y,obj_wall) {state = "idle"; }
         break;
     case "jump":
 		sprite_index = sprite_set.jump;
 		randomize_state();
 		image_index = vsp < 0? 0 : 1;
 		if (hsp == 0) hsp = choose(-1,1);
-		if onground and vsp == 0 { vsp = jump_force; } 
-		if place_meeting(x,y+2,obj_wall) and vsp > 0 { state = choose("idle","run"); }
+		if onground and vsp == 0 { vsp = choose(-5,-6); } 
+		if place_meeting(x,y+1,obj_wall) and vsp > 0 { state = "run"; }
         break;
     case "sleep":
 		sprite_index = sprite_set.sleep;
@@ -133,7 +135,8 @@ switch (state) {
 		break;
     case "petting":
 		sprite_index = sprite_set.sit;
-		stop_movement();
+		hsp = 0;
+		grav = MACRO_GRAV;
 		petting_timer -= 1;
 		if scr_mouse_enter() {
 			if global.mouse_is_moving == true {
@@ -155,7 +158,7 @@ switch (state) {
 		break;
     case "picked_up":
 		sprite_index = sprite_set.idle;
-		hsp = 0; 
+		stop_movement();
 		x = mouse_x;
 		y = mouse_y;
 		if not left_click_held {
@@ -168,11 +171,9 @@ switch (state) {
 		break;
     case "adopted":
 		sprite_index = sprite_set.idle;
+		stop_movement();
 		x = onwer.x;
 		y = onwer.y;
-		grav = 0;
-		hsp = 0;
-		vsp = 0;
 		break;
 }
 

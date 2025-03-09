@@ -13,8 +13,8 @@
     "path":"folders/Objects.yy",
   },
   "parentObjectId":{
-    "name":"obj_parent",
-    "path":"objects/obj_parent/obj_parent.yy",
+    "name":"obj_parent_of_parents",
+    "path":"objects/obj_parent_of_parents/obj_parent_of_parents.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

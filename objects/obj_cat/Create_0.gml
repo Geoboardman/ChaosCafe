@@ -1,3 +1,7 @@
+event_inherited()
+
+description_text = "Cat: make it happy so it can be adopted: pet it, put it to sleep, use the litter box, etc."
+
 // movement 
 	hsp = 0;
 	vsp = 0;
@@ -7,6 +11,8 @@
 	jump_force = -5;
 	onground = 0;
 	onwall = 0;
+	
+	face = 1;
 	
 //State 
 	state_timer = irandom_range(60, 180); // Time before switching states (1-3 sec)

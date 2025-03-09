@@ -1,17 +1,15 @@
-/// @description Insert description here
-// You can write your code in this editor
 /// Create Event (obj_Menu)
 menu_items = ["Cat Bed", "Cat Home", "Litter Box","CaT","CaT","CaT","CaT","CaT",]; // List of objects
 menu_sprites = [spr_catbedblue, spr_cathomes, spr_litter_box,spr_IdleCatb,spr_IdleCatb,spr_IdleCatb,spr_IdleCatb,spr_IdleCatb,]; // Corresponding sprites
 price_list = [
 	10,
+	100,
 	20,
-	15,
+	30,
+	30,
+	10,
 	40,
-	40,
-	40,
-	40,
-	40,
+	50,
 ]
 
 menu_x = 0;

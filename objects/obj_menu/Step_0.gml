@@ -21,7 +21,7 @@ if (mouse_check_button_pressed(mb_left) && my >= menu_y) {
             dragging = true;
 
             // Create a temporary draggable object
-            drag_obj = instance_create_layer(mx, my, "Instances", obj_dragging);
+            drag_obj = instance_create_layer(mx, my, "walls", obj_dragging);
             drag_obj.price = price_list[i];
             drag_obj.sprite_index = menu_sprites[selected_item];
             drag_obj.selected_index = selected_item; // Store which object it is
@@ -36,7 +36,7 @@ if (mouse_check_button_released(mb_left) && dragging) {
     if (drag_obj != noone and instance_exists(drag_obj)) {
         if (drag_obj.y < menu_y) {
             // Convert it into a placed furniture object
-            var placed_obj = instance_create_layer(drag_obj.x, drag_obj.y, "Instances", obj_furniture);
+            var placed_obj = instance_create_layer(drag_obj.x, drag_obj.y, "walls", obj_furniture);
             placed_obj.sprite_index = menu_sprites[drag_obj.selected_index];
         }
         instance_destroy(drag_obj);

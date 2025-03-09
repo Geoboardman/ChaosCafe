@@ -64,7 +64,7 @@ switch (state) {
 			if y <= room_height/3 {
 				instance_destroy();
 				instance_destroy(pet);
-				global.money += 100;
+				global.money += 50;
 			}
 		} else {
 			sprite_index = currect_sprites.walk_sideways;

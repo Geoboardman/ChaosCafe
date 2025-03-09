@@ -1,5 +1,5 @@
 if DEBUG_MODE == true {
-	draw_text(GUI_WIDTH/3,8,global.new_person_timer);
+	//draw_text(GUI_WIDTH/3,8,global.new_person_timer);
 }
 
 switch (global.game_state) {
@@ -8,7 +8,7 @@ switch (global.game_state) {
 		break;
 	case "play":
 		if global.tutorial_text != undefined {
-			draw_text(128,8,global.tutorial_text);
+			draw_text_ext_transformed(128,8,global.tutorial_text,16,550,0.5,0.5,0);
 		}
 		
 		scr_draw_text_and_sprites(
