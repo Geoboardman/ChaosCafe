@@ -7,6 +7,10 @@ switch (global.game_state) {
 	
 		break;
 	case "play":
+		if global.tutorial_text != undefined {
+			draw_text(128,8,global.tutorial_text);
+		}
+		
 		scr_draw_text_and_sprites(
 			32, //x position
 			8, //y position

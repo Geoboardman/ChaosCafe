@@ -11,6 +11,19 @@
 //State 
 	state_timer = irandom_range(60, 180); // Time before switching states (1-3 sec)
 	state = "idle"; // Start in IDLE
+	function randomize_state(){
+		if (state_timer <= 0) {
+		    var new_state = irandom(4);
+			state = choose(
+				"idle",
+				"sit",
+				"run",
+				"jump",
+			)
+		    state_timer = irandom_range(60, 180);
+		}
+		grav = MACRO_GRAV;
+	}
 	
 	//sleeping
 	sleepy = true;
@@ -21,6 +34,13 @@
 	poop = true;
 	og_poop_timer = 300;
 	poop_timer = og_poop_timer;
+	
+	//petting
+	petting = true;
+	can_be_pet = 0;
+	og_petting_timer = 120;
+	petting_timer = og_petting_timer;
+	
 	
 //ADOPTION
 	happiness = 0;

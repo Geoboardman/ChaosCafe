@@ -23,6 +23,11 @@ if DEBUG_MODE == true {
 	global.new_person_timer = 300;
 	timer_speed = 1;
 	
+	global.tutorial_text = undefined;
+	
+	global.mouse_previous_x = mouse_x;
+	global.mouse_previous_y = mouse_y;
+	global.mouse_is_moving = false; 
 	
 //MACROS
 	#macro GUI_WIDTH 448

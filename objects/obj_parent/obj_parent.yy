@@ -1,18 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_pet_parent",
-  "eventList":[],
+  "%Name":"obj_parent",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_pet_parent",
+  "name":"obj_parent",
   "overriddenProperties":[],
   "parent":{
     "name":"parents",
     "path":"folders/Objects/parents.yy",
   },
-  "parentObjectId":{
-    "name":"obj_parent",
-    "path":"objects/obj_parent/obj_parent.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

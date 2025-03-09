@@ -48,6 +48,14 @@ switch (global.game_state) {
 			}
 		}
 		
-		var _arrow_one
+		//MOUSE MOVEMENT
+		if mouse_x != global.mouse_previous_x or mouse_y != global.mouse_previous_y {
+			global.mouse_is_moving = true;
+		} else {
+			global.mouse_is_moving = false;
+		}
+		global.mouse_previous_x = mouse_x;
+		global.mouse_previous_y = mouse_y;
+		
 		break;
 }

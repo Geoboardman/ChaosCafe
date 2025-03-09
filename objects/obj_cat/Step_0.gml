@@ -10,8 +10,18 @@ onwall = place_meeting(x+image_xscale,y,obj_wall);
 state_timer--;
 
 //go to pickup state 
-if scr_mouse_enter() {
-	if left_click_held and state != "adopted" {
+if scr_mouse_enter() and state != "adopted" {
+	if petting == true {
+		if global.mouse_is_moving == true and can_be_pet < 30 {
+			can_be_pet += 2;
+			if can_be_pet >= 20 {
+				state = "petting";
+			}
+		} else if can_be_pet > 0 {
+			can_be_pet -= 1;
+		}
+	}
+	if left_click_held {
 		state = "picked_up";
 	}
 }
@@ -19,23 +29,6 @@ if scr_mouse_enter() {
 //flip sprite based on hsp
 if hsp != 0 { image_xscale = sign(hsp); }
 
-//randomize state
-if state != "picked_up" and state != "sleep" and state != "adopted" and state != "poop" {
-	if (state_timer <= 0) {
-	    var new_state = irandom(4);
-		state = choose(
-			"idle",
-			"sit",
-			"run",
-			"jump",
-		)
-	    state_timer = irandom_range(60, 180);
-	}
-	grav = MACRO_GRAV;
-} else {
-	grav = 0;
-	vsp = 0;
-}
 
 if sleepy == false {
 	sleep_timer -= 1;
@@ -53,18 +46,29 @@ if poop == false {
 	}
 }
 
+if petting == false {
+	petting_timer -= 1;
+	if petting_timer < 0 {
+		petting_timer = og_petting_timer;
+		petting = true;
+	}
+}
+
 // STATE MACHINE
 switch (state) {
     case "idle": 
 		sprite_index = sprite_set.idle; 
+		randomize_state();
 		hsp = 0; 
 		break;
     case "sit":
 		sprite_index = sprite_set.sit;
+		randomize_state();
 		hsp = 0;
 		break;
     case "run":
 		sprite_index = sprite_set.run; 
+		randomize_state();
 		var _furniture = instance_place(x,y,obj_furniture);
 		if _furniture != noone {
 			switch (_furniture.sprite_index) {
@@ -93,6 +97,7 @@ switch (state) {
         break;
     case "jump":
 		sprite_index = sprite_set.jump;
+		randomize_state();
 		image_index = vsp < 0? 0 : 1;
 		if (hsp == 0) hsp = choose(-1,1);
 		if onground and vsp == 0 { vsp = jump_force; } 
@@ -123,6 +128,28 @@ switch (state) {
 			poop_timer = og_poop_timer
 			state_timer = irandom_range(60, 180);
 			happiness += 50;
+			state = "run";
+		}
+		break;
+    case "petting":
+		sprite_index = sprite_set.sit;
+		stop_movement();
+		petting_timer -= 1;
+		if scr_mouse_enter() {
+			if global.mouse_is_moving == true {
+				happiness += 0.2;
+			}
+		}
+		if petting_timer <= 0 {
+			if petting_timer <= 0 {
+				var _furniture = instance_place(x,y,obj_furniture);
+				if _furniture != noone {
+					_furniture.image_index = 1;
+				}
+			}
+			petting_timer = og_petting_timer*4;
+			state_timer = irandom_range(60, 180);
+			petting = false;
 			state = "run";
 		}
 		break;
